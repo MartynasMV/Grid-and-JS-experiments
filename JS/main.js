@@ -77,30 +77,30 @@ console.log(firstName);
 
 person.email = "john@SpeechGrammarList.com";
 console.log(person); */
-
+/* 
 const todoList = [
   {
     id: 1,
-    text: "take out trash",
+    tekstas: "take out trash",
     isCompleted: true,
   },
   {
     id: 2,
-    text: "meeting at 2pm",
+    tekstas: "meeting at 2pm",
     isCompleted: false,
   },
   {
     id: 3,
-    text: "go to shop",
+    tekstas: "go to shop",
     isCompleted: true,
   },
 ];
 console.log(todoList);
-meetingAt2PM = todoList[1].text;
+meetingAt2PM = todoList[1].tekstas;
 console.log(meetingAt2PM);
 
 const todoListJASONIFIED = JSON.stringify(todoList); //with JSON we send data to the server
-console.log(todoListJASONIFIED);
+console.log(todoListJASONIFIED); */
 
 /* 
 //for loops
@@ -116,12 +116,125 @@ while (i <= 10) {
   i++;
 } */
 
-for (let i = 0; i <= todoList.length; i++) {
+/* for (let i = 0; i <= todoList.length; i++) {
   console.log(todoList[i]);
-}
+} */
 
 //for loop
 
-for (let todo of todoList) {
-  console.log(todo);
+/* for (let todo of todoList) {
+  console.log(todo.tekstas);
+} */
+
+//forEach, map, filter
+
+/* todoList.forEach(function (todo) {
+  console.log(todo.tekstas);
+}); */
+
+/* const todoTekstas = todoList.map(function (todo) {
+  return todo.tekstas;
+});
+console.log(todoTekstas); */
+
+/* const todoCompleted = todoList.filter(function (todo) {
+  return todo.isCompleted === true;
+});
+console.log(todoCompleted); */
+
+/* const todoCompleted = todoList
+  .filter(function (todo) {
+    return todo.isCompleted === true;
+  })
+  .map(function (todo) {
+    return todo.tekstas;
+  });
+console.log(todoCompleted);
+ */
+
+//CONDTITIONS
+
+/* const x = 9;
+if (x === 10) {
+  console.log("equal");
+} else if (x > 10) {
+  console.log(`${x} is more than 10`);
+} else {
+  console.log(`${x} is less than 10`);
 }
+ */
+
+/* const x = 4;
+const y = 11;
+
+if (x > 5 || y > 10) {
+  console.log("x more than 5 OR y more than 10");
+}
+
+const x1 = 6;
+const y1 = 11;
+
+if (x1 > 5 && y1 > 10) {
+  console.log("x1 more than 5 AND y1 more than 10");
+} */
+
+/* const x = 11;
+const color = x > 10 ? "red" : "blue";
+console.log(color); //it reads: IF X > 10 make color red ELSE its blue
+ */
+
+//Switches
+
+/* const x = 10; //if id make x = 'green' then switch would kick in default case : neither blue or red
+const color = x > 10 ? "red" : "blue";
+switch (color) {
+  case "red":
+    console.log("color is red");
+    break;
+  case "blue":
+    console.log("color is blue");
+    break;
+  default:
+    console.log("neither blue or red");
+    break;
+}
+ */
+
+//FUNCTIONS
+
+/* function addNums(num1, num2) {
+  console.log(num1 + num2);
+}
+addNums(2, 2); */
+
+/* function addNumbers(number1 = 6, number2 = 7) {
+  console.log(number1 + number2);
+}
+addNumbers();
+addNumbers(5, 5);
+ */
+
+/* function addNumbers(number1 = 6, number2 = 7) {
+  return number1 + number2;
+}
+console.log(addNumbers(5, 5));
+ */
+
+/* const addNumbers = (number1 = 6, number2 = 7) => {
+  return number1 + number2;
+};
+console.log(addNumbers(5, 5));
+ */
+
+/* const addNumbers = (number1 = 6, number2 = 7) => console.log(number1 + number2);
+addNumbers();
+ */
+
+/* const addNumbers = (number1 = 6, number2 = 7) => number1 + number2;
+console.log(addNumbers(5, 5));
+ */
+
+/* const addFive = (num1) => num1 + 5;
+console.log(addFive(1)); */
+
+//Object oriented programming
