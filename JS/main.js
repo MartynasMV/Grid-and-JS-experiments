@@ -1,3 +1,5 @@
+//https://www.youtube.com/watch?v=hdI2bqOjy3c&t=1s
+
 /* alert("helo"); */
 /* console.log("hello"); */
 /* console.warn("this is a warning"); */
@@ -238,3 +240,137 @@ console.log(addNumbers(5, 5));
 console.log(addFive(1)); */
 
 //Object oriented programming
+//Constructor function
+/* function Person(firstName, lastName, placeOfBirth, dob) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+  this.placeOfBirth = placeOfBirth;
+  this.dob = new Date(dob);
+  this.getBirthYear = function () {
+    return this.dob.getFullYear();
+  };
+  this.getFullName = function () {
+    return `${this.firstName} ${this.lastName}`;
+  };
+}
+const person1 = new Person("John", "Peterson", "UK", "4-3-1980");
+const person2 = new Person("Lilly", "Ash", "Spain", "8-5-1999");
+console.log(person1);
+console.log(person2);
+console.log(person2.placeOfBirth);
+
+console.log(person1.getBirthYear());
+console.log(person1.getFullName());
+
+//its not very good to use function within a fucntion so instead this can be done:
+
+Person.prototype.getFullName = function () {
+  return `${this.firstName} ${this.lastName}`;
+};
+console.log(person2.getFullName());
+
+Person.prototype.getBirthYear = function () {
+  return this.dob.getFullYear();
+};
+console.log(person2.getBirthYear()); */
+
+/* 
+//Class, does the same thing as above but prettier way
+class Person {
+  constructor(firstName, lastName, placeOfBirth, dob) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.placeOfBirth = placeOfBirth;
+    this.dob = new Date(dob);
+  }
+  getBirthYear() {
+    return this.dob.getFullYear();
+  }
+  getFullName() {
+    return `${this.firstName} ${this.lastName}`;
+  }
+}
+const person1 = new Person("John", "Peterson", "UK", "4-3-1980");
+const person2 = new Person("Lilly", "Ash", "Spain", "8-5-1999");
+console.log(person1.getFullName());
+console.log(person1.getBirthYear());
+ */
+
+//console.log(window);
+
+// Single element selectors
+/* const myForm = document.getElementById("my-form");
+console.log(myForm);
+const myFormv2 = document.querySelector("#my-form");//recommended! 
+console.log(myFormv2);
+console.log(document.querySelector("h1")); //its selecting only the FIRST h1 as its single selector
+ */
+
+//multiple element selectors
+/* console.log(document.querySelectorAll(".item")); //doing this select all item classes and gives a Node list in the console
+const items = document.querySelectorAll(".item");
+items.forEach((item) => console.log(item)); //looping via all 3 items
+ */
+/*const ul = document.querySelector(".items");
+ ul.remove(); */
+/* ul.lastElementChild.remove(); */
+/* ul.firstElementChild.textContent = "Hello"; */
+/* ul.children[1].innerText = "hiii"; */
+/* ul.lastElementChild.innerHTML = "<h2>Hell</h2>"; */
+
+/* button = document.querySelector(".btn");
+button.style.background = "red";
+ */
+
+/* button = document.querySelector(".btn");
+button.addEventListener("click", (e) => {
+  e.preventDefault(); //preventng default behaviour
+  console.log(e); //very useful. I can get  e.target.id e.target.className e.target.value
+}); */
+
+/* button = document.querySelector(".btn");
+button.addEventListener("click", (e) => {
+  e.preventDefault();
+  document.querySelector("#my-form").style.background = "#ccc";
+}); */
+
+/* button = document.querySelector(".btn");
+button.addEventListener("click", (e) => {
+  e.preventDefault();
+  document.querySelector(".item").classList.toggle("bg-dark"); //also possible options can be looked up by seraching classList
+  document.querySelector(".items").lastElementChild.innerHTML =
+    "<h1>Last child</h1>";
+}); */
+
+/* button = document.querySelector(".btn");
+button.addEventListener("mouseover", (e) => {
+  document.querySelector("#my-form").style.background = "#ccc";
+  document.querySelector("h1").style.background = "#ccc";
+}); //can rean about it more in MDN documentation
+ */
+
+const myForm = document.querySelector("#my-form");
+const nameInput = document.querySelector("#name");
+const emailInput = document.querySelector("#email");
+const message = document.querySelector(".msg");
+const userList = document.querySelector("#users2");
+
+myForm.addEventListener("submit", onSubmit);
+
+function onSubmit(e) {
+  e.preventDefault();
+  if (nameInput.value === "" || emailInput === "") {
+    message.classList.add("error");
+    message.innerHTML = "Please enter all fields";
+    setTimeout(() => message.remove(), 2000);
+  } else {
+    const li = document.createElement("li");
+    li.appendChild(
+      document.createTextNode(`${nameInput.value}: ${emailInput.value}`)
+    );
+    userList.appendChild(li);
+    //clear fields:
+    nameInput.value = "";
+    emailInput.value = "";
+  }
+}
