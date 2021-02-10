@@ -21,11 +21,33 @@ console.log(document.all[10]);
 
 //SELECTORS
 //getElementByID not recommended to use this selector
-
 /* const headerTitle = document.getElementById("header-title"); //not recommended to use this selector
 console.log(headerTitle); */
+//SELECTORS
+//document.getElementsByClassName (same goes for getElementsByTagName)
+/* const items = document.getElementsByClassName("list-group-item");
+console.log(items[3]);
+items[0].textContent =
+  "item 1 is now changed by textContent and fontWeight + fontSize";
+items[0].style.fontSize = "2rem";
+items[0].style.fontWeight = "bold";
+items[1].style.backgroundColor = "#7FFF00";
+console.log(items[3].textContent);
 
-const headerTitle = document.querySelector("#header-title");
+// items.style.background = "black"; // this wont work because its a COLLECTION of items in order to change we need to loop it
+for (var i = 0; i < items.length; i++) {
+  items[i].style.background = "#f4f4";
+} */
+/* 
+
+ */
+//SELECTORS
+//document.querySelector
+//note that it only grabs the first match!
+//can grab anything class, tag, header, id. (same as with jquery, which I never used yet)
+
+/* const headerTitle = document.querySelector("#header-title");
+const header = document.querySelector("header"); */
 
 /* headerTitle.textContent = "New header";
 
@@ -36,4 +58,42 @@ headerTitle.innerText = "newest chage"; */
 
 /* headerTitle.innerHTML = "<h3>Hell</h3>"; //very interesting, it puts h3 inside h1 :O */
 
-headerTitle.style.border = "2px solid black";
+/* headerTitle.style.border = "2px solid black"; */
+
+/* header.style.borderBottom = "25px solid yellow"; //!!altough css has property border-bottom here dash has to be changed to borderBottom !! */
+
+/* const header = document.querySelector("#main-header");
+header.style.borderBottom = "dotted 10px red"; */
+
+/* const input = document.querySelector("input");
+input.value = "Hello value in the input field"; //grabs only the first input out of 2 */
+
+/* const submit = document.querySelector('input[type = "submit"]');
+console.log(submit);
+submit.value = "changing button value with submit.value";
+
+const item = document.querySelector(".list-group-item");
+item.style.color = "red";
+
+const lastItem = document.querySelector(".list-group-item:last-child"); //css selectors can be applied same as in css
+lastItem.style.color = "blue";
+
+const secondChild = document.querySelector(".list-group-item:nth-child(2)"); //css selector used
+secondChild.style.color = "orange"; */
+
+//SELECTOR querySelectorAll
+
+/* const titles = document.querySelectorAll(".title");
+console.log(titles);
+console.log(titles[0]);
+console.log(titles[1]);
+titles[0].textContent = "Hell";
+titles[1].textContent = "Items changed with titles[1].textContent";
+ */
+const oddTitles = document.querySelectorAll("li:nth-child(odd)");
+const evenTitles = document.querySelectorAll("li:nth-child(even)");
+
+for (var i = 0; i < oddTitles.length; i++) {
+  oddTitles[i].style.background = "#f4f4f4";
+  evenTitles[i].style.background = "#ccc";
+}
