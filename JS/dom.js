@@ -248,3 +248,70 @@ function runEvent(event) {
   box.style.background = "rgb(" + event.offsetX + "," + event.offsetY + ",40)";
 }
  */
+
+//Keyboard events: Keyup keydown keypress
+/* 
+const button = document.querySelector("#button");
+const itemInput = document.querySelector('input[type="text"]');
+const form = document.querySelector('form[class="form-inline mb-3"]'); //more simply would be grabbing by just with .
+
+itemInput.addEventListener("keydown", runEvent); //registering what is typed in input text field
+
+function runEvent(event) {
+  console.log("Event type: " + event.type);
+  console.log(event.target.value); //with this we are capturing what is written in the field in the console, cna put it somewhere else as well
+  const output = document.querySelector("#output");
+  output.innerHTML = event.target.value;
+  output.style.background = "red";
+}
+ */
+
+// Keyboard events: focus(in field) blur(clicking out of field)
+/* 
+const itemInput = document.querySelector('input[type="text"]');
+itemInput.addEventListener("focus", runEvent);
+itemInput.addEventListener("blur", runEvent);
+itemInput.addEventListener("cut", runEvent); //nice! can register when smth is cut
+itemInput.addEventListener("paste", runEvent); //can register when smth is pasted
+itemInput.addEventListener("copy", runEvent); //can register when smth is copied
+
+function runEvent(event) {
+  console.log("EVENT TYPE: " + event.type);
+  //i can make any action in connection to the keybaord event for example cut will make body to disappear:
+  //document.body.style.display = "none"; //need to get rid of all other event listeners except CUT
+} */
+/* 
+//Keyboard events: input (registers entering cuting and pasting but no copy)
+
+const itemInput = document.querySelector("input[class='form-control mr-2']");
+
+itemInput.addEventListener("input", runEvent);
+function runEvent(event) {
+  console.log(event.type);
+}
+ */
+/* 
+//Keyboard: change event
+
+const select = document.querySelector("select");
+select.addEventListener("input", runEvent);
+select.addEventListener("change", runEvent);
+function runEvent(event) {
+  console.log(event.type); //any change will be recorded
+  console.log(event.target.value); //logging the selection of change
+}
+ */
+
+//Keyboard submit event with example to grab what is written in submit and display instead of item 1
+const form = document.querySelector("form");
+form.addEventListener("submit", runEvent);
+
+function runEvent(e) {
+  console.log(e.type);
+  e.preventDefault();
+  const text = document.querySelector('li[class="list-group-item"]');
+  //console.log((text.innerText = "a"));
+  const inputValue = document.querySelector("input[type ='text']");
+  //console.log(inputValue.value);
+  text.innerHTML = inputValue.value;
+}
